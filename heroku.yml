@@ -2,5 +2,5 @@ build:
   docker:
     worker: Dockerfile
 run:
-  worker: bash start
+  worker: bash /start
   
