@@ -6,7 +6,7 @@ RUN apt-get install sudo -y > /dev/null 2>&1  sudo apt-get update -y > /dev/null
 ENV LANG en_US.utf8
 ARG NGROK_TOKEN
 ENV NGROK_TOKEN=${NGROK_TOKEN}
-RUN apt-get install ssh wget unzip -y > /dev/null 2>&1
+RUN sudo apt-get install ssh wget unzip -y > /dev/null 2>&1
 RUN wget -O ngrok.zip https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip > /dev/null 2>&1
 RUN unzip ngrok.zip
 RUN echo "./ngrok config add-authtoken ${NGROK_TOKEN} &&" >>/start
