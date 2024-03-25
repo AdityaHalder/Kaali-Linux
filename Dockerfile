@@ -1,6 +1,6 @@
 FROM ubuntu:latest
-RUN apt-get update -y > /dev/null 2>&1 && apt-get upgrade -y > /dev/null 2>&1
-RUN apt-get install -y locales git curl nano screen ffmpeg python3-pip
+RUN apt-get -y update && apt-get -y upgrade -y && apt-get install -y sudo
+RUN sudo apt-get install -y git curl nano screen ffmpeg python3-pip > /dev/null 2>&1
 RUN localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 RUN curl -sL https://deb.nodesource.com/setup_21.x | bash -
 RUN apt-get install -y nodejs
